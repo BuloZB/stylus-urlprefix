@@ -16,11 +16,11 @@ body
 
 ```css
 body {
-  background: #fff 'images/rainbow.png' 0 0 no-repeat;
+  background: #fff 'rainbow.png' 0 0 no-repeat;
 }
 @font-face {
   font-family: 'Graublau Web';
-  src: 'fonts/GraublauWeb.ttf';
+  src: 'GraublauWeb.ttf';
 }
 ```
 
