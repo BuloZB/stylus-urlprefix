@@ -4,21 +4,30 @@ NPM module for transparent prefixing for `url()` calls in your `.styl` files. Fo
 
 ```stylus
 body
-  background white url('rainbow.png') 50% top
+  background white url('rainbow.png') 0 0 no-repeat
+
+@font-face
+  font-family 'Graublau Web'
+  src url('GraublauWeb.ttf')
+
 ```
 
   yelds by default
 
 ```css
 body {
-  background: #fff url('rainbow.png') 50% top;
+  background: #fff 'images/rainbow.png' 0 0 no-repeat;
+}
+@font-face {
+  font-family: 'Graublau Web';
+  src: 'fonts/GraublauWeb.ttf';
 }
 ```
 
 But what if you want to prefix all `url()` calls with your custom string? Your images can be placed in some commond place defined by your web framework, and writing full path every time is annoying. One ugly solution is using prefix variable like this:
 
 ```stylus
-urlprefix = '/static/images'
+urlprefix = '/static/images/'
 
 body
   background white url(urlprefix + 'rainbow.png') 50% top
@@ -70,9 +79,8 @@ yelds
 
 ```css
 body {
-  background: #fff url('/static/images/rainbow.png') 50% top;
+  background: #fff '/static/images/rainbow.png' 0 0 no-repeat;
 }
-
 @font-face {
   font-family: 'Graublau Web';
   src: '/static/fonts/GraublauWeb.ttf';
