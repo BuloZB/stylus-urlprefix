@@ -9,18 +9,17 @@ body
 @font-face
   font-family 'Graublau Web'
   src url('GraublauWeb.ttf')
-
 ```
 
   yelds by default
 
 ```css
 body {
-  background: #fff 'rainbow.png' 0 0 no-repeat;
+  background: #fff url("rainbow.png") 0 0 no-repeat;
 }
 @font-face {
   font-family: 'Graublau Web';
-  src: 'GraublauWeb.ttf';
+  src: url("GraublauWeb.ttf");
 }
 ```
 
@@ -40,17 +39,18 @@ But this is even worser than repeating yourself every time. More systematic appr
 ```bash
 $ npm install stylus-urlprefix
 ```
+*not ready yet!*
 
 or
 
 ```bash
-$ cd $NODE_PATH
 $ git clone git@github.com:srigi/stylus-urlprefix.git
 ```
+*to your `$NODE_PATH`*
 
 ## Usage
 
-`stylus-urlprefix` is regular Stylus plugin. Compile all your `.styl` files into `.css` with use of the plugin like this:
+`stylus-urlprefix` is regular Stylus plugin. Compile all your `.styl` files (in `styl/` folder) into `.css` (in `css/` folder) with use of the plugin like this:
 
 ```bash
 $ stylus --use stylus-urlprefix -o css/ styl/
@@ -60,12 +60,11 @@ All `url()` calls will be by default expanded to:
 
 ```css
 body {
-  background: #fff url('images/rainbow.png') 50% top;
+  background: #fff url('images/rainbow.png') 0 0 no-repeat;
 }
-
 @font-face {
   font-family: 'Graublau Web';
-  src: 'fonts/GraublauWeb.ttf';
+  src: url('fonts/GraublauWeb.ttf');
 }
 ```
 
@@ -79,11 +78,11 @@ yelds
 
 ```css
 body {
-  background: #fff '/static/images/rainbow.png' 0 0 no-repeat;
+  background: #fff url('/static/images/rainbow.png') 0 0 no-repeat;
 }
 @font-face {
   font-family: 'Graublau Web';
-  src: '/static/fonts/GraublauWeb.ttf';
+  src: url('/static/fonts/GraublauWeb.ttf');
 }
 ```
 
